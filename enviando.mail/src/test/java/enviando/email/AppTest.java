@@ -27,6 +27,7 @@ public class AppTest {
 
 		try {
 			Properties props = new Properties();
+			props.put("mail.smtp.ssl.trust", "*");
 			props.put("mail.smtp.auth", "true");
 			props.put("mail.smtp.starttls.enable", "true");
 			props.put("mail.smtp.host", "smtp-mail.outlook.com");
@@ -45,10 +46,10 @@ public class AppTest {
 					.parse("leonardo.costa.santos.si@gmail.com, leonardosistemas54@gmail.com, leocosta1992@live.com");
 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress(userMail)); // Quem está enviando
+			message.setFrom(new InternetAddress(userMail, "Leonardo Costa Santos")); // Quem está enviando
 			message.setRecipients(Message.RecipientType.TO, toUser); // Email de destino
-			message.setSubject("Chegou o email enviado com Java Teste"); // Assunto do email
-			message.setText("Olá programador! Você acaba de receber um e-mail enviado através do Java teste"); // Corpo do
+			message.setSubject("Chegou o email enviado com Java"); // Assunto do email
+			message.setText("Olá programador! Você acaba de receber um e-mail enviado através do Java"); // Corpo do
 																											// email
 			Transport.send(message);
 
