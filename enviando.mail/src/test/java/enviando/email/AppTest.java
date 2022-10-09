@@ -26,7 +26,7 @@ public class AppTest {
 					"leonardosistemas54@gmail.com, leonardo.costa.santos.si@gmail.com", "Leonardo Costa Santos",
 					"Teste JavaMail", stringBuilderTextoEmail.toString());
 
-			obEmail.enviarEmail(true);
+			obEmail.enviarEmailAnexo(true);
 
 		} catch (Exception e) {
 			e.printStackTrace();
